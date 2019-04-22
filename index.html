@@ -14,20 +14,25 @@
 
 <body>
   <main class="container-fluid">
+<br>
+<br>
 
-    <h1>JavaScript for interactive apps!</h1>
-    <h3>Right-click / Inspect, then select console</h3>
+    <h1>GPA Estimator</h1>
+    <br>
+    <br>
 
-    <p>Enter your name:
-      <input id="guest" type="text" value="Eden">
+   
+
+    <p>Enter grade 1:
+      <input id="firstNumber" type="number">
     </p>
 
-    <p>Enter first number:
-      <input id="firstNumber" type="number" value="7">
+    <p>Enter grade 2:
+      <input id="secondNumber" type="number">
     </p>
 
-    <p>Enter second number:
-      <input id="secondNumber" type="number" value="12">
+    <p>Enter grade 3:
+      <input id="thirdNumber" type="number">
     </p>
 
     <button id="clicker" class="btn btn-primary">Click me!</button>
@@ -38,26 +43,23 @@
 
   <script>
     console.log('SCRIPT START')
-
     console.log('Declare testable functions.....................')
-
-    function add(x, y) {
-      return x + y
+    function avg(x, y,z) {
+      return (x + y+ z)/3
     }
-    console.log('Defined add=' + add)
-
+    console.log('Defined avg=' + avg)
     console.log('Declare event listeners .......................')
-
     document.getElementById('clicker').addEventListener('click', function () {
-      const s = document.getElementById('guest').value
+      //const s = document.getElementById('guest').value
       const i = parseInt(document.getElementById('firstNumber').value)
       console.log('i=' + i)
       const j = parseInt(document.getElementById('secondNumber').value)
       console.log('j=' + j)
-      const ans = s + ', your sum is ' + add(i, j) + '.'
+      const k = parseInt(document.getElementById('thirdNumber').value)
+      console.log('k=' + k)
+      const ans =  ' your avg is ' + avg(i, j,k) + '.'
       document.getElementById('result').innerHTML = ans
     })
-
     console.log('SCRIPT END')
   </script>
 
